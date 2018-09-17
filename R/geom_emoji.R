@@ -30,8 +30,8 @@ geom_emoji <- function(alias="rose", color="#67001f", size=120, x=1, y=1, vjust=
 ##' @return ggplot2 layer
 ##' @export
 ##' @author guangchuang yu
-geom_fontawesome <- function(alias="fa-github", color="#67001f", size=120, x=1, y=1, ...) {
-    geom_emoji_(alias, color, size, x, y, ..., .fun=fontawesome, family="fontawesome-webfont")
+geom_fontawesome <- function(alias="code-branch", color="#67001f", size=120, x=1, y=1, ...) {
+    geom_emoji_(alias, color, size, x, y, ..., .fun=fontawesome, family="fa-solid-900")
 }
 
 ##' @importFrom ggplot2 geom_text
