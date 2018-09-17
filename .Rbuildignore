@@ -1,3 +1,5 @@
 Makefile
 mkdocs
 docs
+^.*\.Rproj$
+^\.Rproj\.user$
