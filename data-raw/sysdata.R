@@ -36,7 +36,7 @@ fontawesome_data <- map_df(names(metadata), function(nm) {
   data_frame(
     fa = stringi::stri_unescape_unicode(paste0("\\u", l$unicode)),
     description = l$label,
-    aliases = nm,
+    aliases = paste0("fa-", nm),
     tags = paste0(l$search$terms, collapse = ", "),
     html = paste0("&#x", l$unicode, ";"),
     styles = paste0(l$styles, collapse = ", ")
