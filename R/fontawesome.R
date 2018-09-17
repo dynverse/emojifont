@@ -49,24 +49,13 @@ fontawesome <- function(aliases) {
 ##' @return NULL
 ##' @export
 ##' @author ygc
-load.fontawesome <- function(font = "fontawesome-webfont.ttf") {
-    efproto$load_font(font=font, type='fontawesome')
+load.fontawesome <- function(font = c("fa-regular-400.ttf", "fa-brands-400.ttf", "fa-solid-900.ttf")) {
+    for (fo in font) {
+      efproto$load_font(font=fo, type='fontawesome')
+    }
 }
 
 
-##' @importFrom utils read.delim
-get_fontawesome_data <- function() {
-    ## copy font table from:
-    ## https://fortawesome.github.io/Font-Awesome/cheatsheet/
-    y <- read.delim(pipe("pbpaste"), stringsAsFactors=F)
-    fa <- gsub("(.*)fa.*", '\\1', y[,1])
-    html <- gsub(".*\\[(.*)\\].*",'\\1', y)
-
-    aliases <- gsub(".*(fa.*)\\s+.*", '\\1', y)
-
-    fontawesome_data <- data.frame(fa=fa, aliases=aliases, html=html, stringsAsFactors=FALSE)
-    return(fontawesome_data)
-}
 
 
 ## example

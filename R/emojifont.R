@@ -132,16 +132,3 @@ emoji <- function(aliases) {
 load.emojifont <- function(font = "EmojiOne.ttf") {
     efproto$load_font(font=font)
 }
-
-
-##' @importFrom utils download.file
-download_emoji <- function() {
-    url <- "https://raw.githubusercontent.com/github/gemoji/master/db/emoji.json"
-    emoji_file <- tempfile(fileext='.json')
-    download.file(url, destfile=emoji_file)
-    jsonlite <- "jsonlite"
-    require(jsonlite, character.only=TRUE)
-    fromJSON <- eval(parse(text='fromJSON'))
-    emoji_data <- fromJSON(readLines(emoji_file))
-    save(emoji_data, file="sysdata.rda")
-}

@@ -4,7 +4,8 @@
 \alias{load.fontawesome}
 \title{load.fontawesome}
 \usage{
-load.fontawesome(font = "fontawesome-webfont.ttf")
+load.fontawesome(font = c("fa-regular-400.ttf", "fa-brands-400.ttf",
+  "fa-solid-900.ttf"))
 }
 \arguments{
 \item{font}{font}
