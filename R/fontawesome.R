@@ -49,12 +49,13 @@ fontawesome <- function(aliases) {
 ##' @return NULL
 ##' @export
 ##' @author ygc
-load.fontawesome <- function(font = c("fa-regular-400.ttf", "fa-brands-400.ttf", "fa-solid-900.ttf")) {
-    for (fo in font) {
-      efproto$load_font(font=fo, type='fontawesome')
-    }
+load.fontawesome <- function(font = c("fa-solid-900.ttf")) {
+  # efproto$load_font(font=font, type=gsub("\\.ttf", "", font))
+  efproto$load_font(font=font, type="fontawesome")
+    # for (fo in font) {
+    #   efproto$load_font(font=fo, type=gsub("\\.ttf", "",))
+    # }
 }
-
 
 
 
@@ -67,4 +68,4 @@ load.fontawesome <- function(font = c("fa-regular-400.ttf", "fa-brands-400.ttf",
 ##                z=sample(fontawesome(c('fa-weibo','fa-github', 'fa-twitter', 'fa-apple')), replace=T, 10))
 
 ## library(ggplot2)
-## ggplot(d, aes(x, y, color=z)) + geom_text(aes(label=z), family='fontawesome-webfont', size=8)
+## ggplot(d, aes(x, y, color=z)) + geom_text(aes(label=z), family='ffa-solid-900', size=8)
